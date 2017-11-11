@@ -1,0 +1,25 @@
+<acContentHeader [conf]="{'judul':'Paslon','subJudul':'Form Paslon','hirarki':['Master','Paslon','Form']}"></acContentHeader>
+
+<section class="content">
+  <div class="box box-success">
+    <div class="box-header with-border ">
+      <h3 class="box-title pull-right">
+        <a (click)='keList()' href="javascript: void(0);" class="btn btn-link margin-inline">Lihat Daftar Paslon >></a>
+      </h3>
+    </div>
+    <form role="form" (ngSubmit)="onSubmit()" ngNativeValidate>
+      <div class="box-body chat" id="chat-box">
+        <div style="padding:0px 60px 0px 60px" class='col-md-12'>
+          
+          <acInput [(value)]='data.nomor' [conf]="{'judul':'Nomor Urut', 'type':'number'}"></acInput>
+          <acSelect [(value)]='data.id_calon' label="Nama Calon" tabel="profile" required="true"></acSelect>
+          <acSelect [(value)]='data.id_wakil' label="Nama Wakil" tabel="profile" required="true"></acSelect>
+          <acSelect [(value)]='data.id_event' label="Event" tabel="event" required="true"></acSelect>
+        </div>
+      </div>
+      <div class="box-footer">
+        <acInput [conf]="{'type':'submit'}"></acInput>
+      </div>
+    </form>
+  </div>
+</section>

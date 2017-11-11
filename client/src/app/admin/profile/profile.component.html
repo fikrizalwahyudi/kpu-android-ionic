@@ -1,0 +1,23 @@
+<acContentHeader [conf]="{'judul':'Profile','subJudul':'Form Profile','hirarki':['Setting', 'Profile']}"></acContentHeader>
+
+<section class="content" style="min-height:650px">
+    <div class="box box-success">
+        <!-- <div  class="box-header with-border ">
+            <h3  class="box-title pull-right"> <a href="javascript: void(0);" class="btn btn-link margin-inline">Lihat Daftar Profile >></a></h3>
+        </div> -->
+        <form role="form" (ngSubmit)="onSubmit()" ngNativeValidate>
+            <div class="box-body chat" id="chat-box"  >
+                <div style="padding:0px 60px 0px 60px" class='col-md-12'>
+                    <acInput [(value)]='data.realm' [conf]="{'judul':'Nama Lengkap','required':true,'readonly':true}" ></acInput>
+                    <acInput [(value)]='data.username' [conf]="{'judul':'Username','required':true,'readonly':true}" ></acInput>
+                    <acInput [(value)]='data.email' [conf]="{'judul':'Email','required':true}" ></acInput>
+                    <acInput [(value)]='data.gambar' (change)="upload($event)" [conf]="{'judul':'Photo','type':'file'}" ></acInput>
+                    <!-- <image-upload [url]="'http://localhost:3000/api/unggahs/foto/upload'"></image-upload> -->
+                </div>
+            </div>
+            <div class="box-footer">
+                <acInput [conf]="{'type':'submit'}" ></acInput>
+            </div>
+        </form>
+    </div>
+</section>

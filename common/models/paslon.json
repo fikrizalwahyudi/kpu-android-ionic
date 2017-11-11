@@ -1,0 +1,47 @@
+{
+  "name": "paslon",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "mixins": {
+  },
+  "properties": {
+    "id": {
+      "type": "number"
+    },
+    "id_event": {
+      "type": "number"
+    },
+    "id_calon": {
+      "type": "number"
+    },
+    "id_wakil": {
+      "type": "number"
+    },
+    "nomor": {
+      "type": "number"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "event": {
+      "type": "belongsTo",
+      "model": "event",
+      "foreignKey": "id_event"
+    },
+    "calon": {
+      "type": "belongsTo",
+      "model": "profile",
+      "foreignKey": "id_calon"
+    },
+    "wakil": {
+      "type": "belongsTo",
+      "model": "profile",
+      "foreignKey": "id_wakil"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

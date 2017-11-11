@@ -1,0 +1,54 @@
+{
+  "name": "profile",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "mixins": {
+  },
+  "properties": {
+    "id": {
+      "type": "number",
+      "required": true
+    },
+    "nama": {
+      "type": "string"
+    },
+    "tempat_lahir": {
+      "type": "string"
+    },
+    "tgl_lahir": {
+      "type": "date"
+    },
+    "alamat": {
+      "type": "string"
+    },
+    "id_pendidikan_terakhir": {
+      "type": "number"
+    },
+    "photo": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "pendidikan_terakhir": {
+      "type": "belongsTo",
+      "model": "pendidikan_terakhir",
+      "foreignKey": "id_pendidikan_terakhir"
+    },
+    "profile_pendidikan": {
+      "type": "hasMany",
+      "model": "profile_pendidikan",
+      "foreignKey": "id_profile"
+    },
+    "rekam_jejak": {
+      "type": "hasMany",
+      "model": "rekam_jejak",
+      "foreignKey": "id_profile"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

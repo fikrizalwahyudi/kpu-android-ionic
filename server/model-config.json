@@ -1,0 +1,78 @@
+{
+  "_meta": {
+    "sources": [
+      "loopback/common/models",
+      "loopback/server/models",
+      "../common/models",
+      "./models"
+    ],
+    "mixins": [
+      "loopback/common/mixins",
+      "loopback/server/mixins",
+      "../common/mixins",
+      "./mixins"
+    ]
+  },
+  "User": {
+    "dataSource": "mysql"
+  },
+  "AccessToken": {
+    "dataSource": "db",
+    "public": false
+  },
+  "ACL": {
+    "dataSource": "db",
+    "public": false
+  },
+  "RoleMapping": {
+    "dataSource": "db",
+    "public": false,
+    "options": {
+      "strictObjectIDCoercion": true
+    }
+  },
+  "Role": {
+    "dataSource": "db",
+    "public": false
+  },
+  "Account": {
+    "dataSource": "db",
+    "public": true
+  },
+  "unggah": {
+    "dataSource": "storage",
+    "public": true
+  },
+  "profile": {
+    "dataSource": "mysql",
+    "public": true
+  },
+  "event": {
+    "dataSource": "mysql",
+    "public": true
+  },
+  "rekam_jejak": {
+    "dataSource": "mysql",
+    "public": true
+  },
+  "paslon": {
+    "dataSource": "mysql",
+    "public": true
+  },
+  "profile_pendidikan": {
+    "dataSource": "mysql",
+    "public": true
+  },
+  "setting": {
+    "dataSource": "mysql",
+    "public": true
+  },
+  "pendidikan_terakhir": {
+    "dataSource": "mysql",
+    "public": true
+  },
+  "jadwal": {
+    "dataSource": "mysql",
+    "public": true
+  }
+}

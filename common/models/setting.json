@@ -1,0 +1,25 @@
+{
+  "name": "setting",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "mixins": {
+  },
+  "properties": {
+    "id": {
+      "type": "number"
+    },
+    "device": {
+      "type": "string"
+    },
+    "skip": {
+      "type": "number"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

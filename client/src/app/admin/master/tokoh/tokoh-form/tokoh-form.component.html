@@ -1,0 +1,44 @@
+<acContentHeader [conf]="{'judul':'Profile','subJudul':'Form Profile','hirarki':['Master','Profile','Form']}"></acContentHeader>
+
+<section class="content">
+  <div class="box box-success">
+    <div class="box-header with-border ">
+      <h3 class="box-title pull-right">
+        <a (click)='keList()' href="javascript: void(0);" class="btn btn-link margin-inline">Lihat Daftar Profile >></a>
+      </h3>
+    </div>
+    <form role="form" (ngSubmit)="onSubmit()" ngNativeValidate>
+      <div class="box-body chat" id="chat-box">
+        <div style="padding:0px 60px 0px 60px" class='col-md-12'>
+          <acInput [(value)]='data.nama' [conf]="{'judul':'Nama','required':true}"></acInput>
+          <acInput [(value)]='data.tempat_lahir' [conf]="{'judul':'Tempat Lahir'}"></acInput>
+          <acInput [(value)]='data.tgl_lahir' [conf]="{'type':'date', 'judul':'Tanggal Lahir'}"></acInput>
+          <acInput [(value)]='data.alamat' [conf]="{'judul':'Alamat'}"></acInput>
+        </div>
+      </div>
+      <div class="box-footer">
+        <acInput [conf]="{'type':'submit'}"></acInput>
+      </div>
+    </form>
+  </div>
+
+  <div class="box">
+    <ul class="nav nav-tabs" role="tablist">
+      <li role="presentation" class="active">
+        <a href="#rekamJejak" aria-controls="rekamJejak" role="tab" data-toggle="tab">Rekam Jejak</a>
+      </li>
+      <li role="presentation">
+        <a href="#profilePendidikan" aria-controls="profilePendidikan" role="tab" data-toggle="tab">Profile Pendidikan</a>
+      </li>
+    </ul>
+  
+    <div class="tab-content">
+      <div role="tabpanel" class="tab-pane active" id="rekamJejak">
+        <app-rekam-jejak *ngIf="proses" [idProfile]="data.id"></app-rekam-jejak>
+      </div>
+      <div role="tabpanel" class="tab-pane" id="profilePendidikan">
+        <app-profile-pendidikan *ngIf="proses" [idProfile]="data.id"></app-profile-pendidikan>
+      </div>
+    </div>
+  </div>
+</section>

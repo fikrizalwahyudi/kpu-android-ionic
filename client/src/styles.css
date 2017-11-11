@@ -1,0 +1,24 @@
+/* You can add global styles to this file, and also import other style files */
+@import "../node_modules/admin-lte/bootstrap/css/bootstrap.min.css";
+@import "../node_modules/admin-lte/dist/css/AdminLTE.min.css";
+@import "../node_modules/admin-lte/dist/css/skins/_all-skins.min.css";
+@import "https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css";
+
+.cari-keren {
+    border:none;
+    background: #fff;
+    background: rgba(0,0,0,.05);
+}
+
+.tombol-cari {
+    border:none;
+    background: #fff;
+    background: rgba(0,0,0,.05);
+}
+
+@media (max-width: 991px) {
+    .tbl-tambah {
+        width:100%;
+        margin-bottom: 10px;
+    }
+}

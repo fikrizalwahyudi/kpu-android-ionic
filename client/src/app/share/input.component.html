@@ -1,0 +1,83 @@
+<div *ngIf="conf.type!=='submit'"  class="form-group row">
+    <label >{{conf.judul}} <small *ngIf="conf.required" style="color:red" title="Harus di isi!">*</small></label> 
+    <input *ngIf="conf.type=='text'"  [(ngModel)]="value" id='{{conf.id}}' type='{{conf.type}}'  class="form-control" placeholder="{{conf.placeholder}}" [readonly]="conf.readonly" [required]='conf.required'>
+    <input *ngIf="conf.type=='password'" [readonly]="conf.readonly"  [(ngModel)]="value" id='{{conf.id}}' type='password'  class="form-control" placeholder="{{conf.placeholder}}" [required]='conf.required' >
+    <input *ngIf="conf.type=='number'" [(ngModel)]="value" id='{{conf.id}}' type='{{conf.type}}'  class="form-control" placeholder="{{conf.placeholder}}" [readonly]="conf.readonly" [required]='conf.required'  disabled='{{conf.disabled}}'>
+    <input *ngIf="conf.type=='email'"  [(ngModel)]="value" id='{{conf.id}}'  type='{{conf.type}}'  class="form-control" placeholder="{{conf.placeholder}}" [readonly]="conf.readonly" disabled='{{conf.disabled}}' pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" [required]='conf.required' email>
+    <input *ngIf="conf.type=='date'" [readonly]="conf.readonly" [ngModel]="value | date:'yyyy-MM-dd'" (ngModelChange)="value=$event" id='{{conf.id}}'  type='{{conf.type}}'  class="form-control" placeholder="{{conf.placeholder}}" [required]='conf.required'>
+    <input *ngIf="conf.type=='time'" [readonly]="conf.readonly" [(ngModel)]="value" id='{{conf.id}}'  type='{{conf.type}}'  class="form-control" placeholder="{{conf.placeholder}}" [required]='conf.required'>
+    <input *ngIf="conf.type=='datetime-local'" [readonly]="conf.readonly" [(ngModel)]="value" id='{{conf.id}}'  type='{{conf.type}}'  class="form-control" placeholder="{{conf.placeholder}}" [required]='conf.required'>
+    <input *ngIf="conf.type=='file'" id='{{conf.id}}' type="{{conf.type}}" placeholder="Input File" accept="{{conf.accept}}">
+    <input *ngIf="conf.type=='image'" (change)='fileChange($event)' id='{{conf.id}}' type="file" placeholder="Input File" accept="{{conf.accept}}">
+    <div *ngIf="conf.type=='dateFromTo'" >
+        <div class='row'>
+            <div class='col-md-1'>
+                From
+            </div>
+            <div class='col-md-5'>
+                <input  [readonly]="conf.readonly" [(ngModel)]="valuef" id='{{conf.idf}}'  type='date'  class="form-control" placeholder="{{conf.placeholder}}" [required]='conf.required'>
+            </div>
+            <div class='col-md-1'>
+                To
+            </div>
+            <div class='col-md-5'>
+                <input  [readonly]="conf.readonly" [(ngModel)]="valued" id='{{conf.idt}}'  type='date'  class="form-control" placeholder="{{conf.placeholder}}" [required]='conf.required'>
+            </div>
+        </div>
+    </div>
+    <textarea *ngIf="conf.type=='textarea'"  [(ngModel)]="value" id='{{conf.id}}'  class="form-control" placeholder="{{conf.placeholder}}" [required]='conf.required' [readonly]="conf.readonly">  </textarea>
+</div>
+
+    <!-- <div class="col-md-3">
+        <label class="form-control-label" for="l6">{{conf.judul}}</label>
+    </div>
+    <div class="col-md-9">
+        <div class="form-input-icon">
+            <input *ngIf="conf.type=='text'"  [(ngModel)]="value" id='{{conf.id}}' type='{{conf.type}}'  class="form-control" placeholder="{{conf.placeholder}}" [readonly]="conf.readonly" [required]='conf.required'>
+            <input *ngIf="conf.type=='password'"  [(ngModel)]="value" id='{{conf.id}}' type='password'  class="form-control" placeholder="{{conf.placeholder}}" [required]='conf.required' >
+        </div>
+    </div> -->
+<!-- <div *ngIf="conf.type=='password'" class="form-group">
+    <label>{{conf.judul}}</label>
+    <input  [(ngModel)]="value" id='{{conf.id}}' type='password'  class="form-control" placeholder="{{conf.placeholder}}" [required]='conf.required' >
+</div>
+<div *ngIf="conf.type=='number'" class="form-group">
+    <label>{{conf.judul}}</label>
+    <input [(ngModel)]="value" id='{{conf.id}}' type='{{conf.type}}'  class="form-control" placeholder="{{conf.placeholder}}" [required]='conf.required'  disabled='{{conf.disabled}}'>
+</div>
+<div *ngIf="conf.type=='textarea'" class="form-group">
+    <label>{{conf.judul}}</label>
+    <textarea [(ngModel)]="value" id='{{conf.id}}'  class="form-control" placeholder="{{conf.placeholder}}" [required]='conf.required' [readonly]="conf.readonly">  </textarea>
+</div>
+<div *ngIf="conf.type=='date'" class="form-group">
+    <label>{{conf.judul}}</label>
+    <input [(ngModel)]="value" id='{{conf.id}}'  type='{{conf.type}}'  class="form-control" placeholder="{{conf.placeholder}}" [required]='conf.required'>
+</div>
+<div *ngIf="conf.type=='phone'" class="form-group">
+    <label>{{conf.judul}}</label>
+    
+    <div class="input-group">
+        <div class="input-group-addon">
+            <i class="fa fa-phone"></i>
+        </div>
+        <input [(ngModel)]="value" id='{{conf.id}}'  type='{{conf.type}}'  class="form-control" placeholder="{{conf.placeholder}}" data-inputmask="&quot;mask&quot;: &quot;(9999) 9999999&quot;" data-mask2="">
+    </div>
+</div>
+<div *ngIf="conf.type=='email'" class="form-group">
+    <label>{{conf.judul}}</label>
+    <input [(ngModel)]="value" id='{{conf.id}}'  type='{{conf.type}}'  class="form-control" placeholder="{{conf.placeholder}}" disabled='{{conf.disabled}}' pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" [required]='conf.required' email>
+</div>
+
+<div *ngIf="conf.type=='file'" class="form-group">
+    <label>{{conf.judul}}</label>
+    <input id='{{conf.id}}' type="{{conf.type}}" placeholder="Input File" accept="{{conf.accept}}">
+</div>
+-->
+<div *ngIf="conf.type=='submit'" class="form-group">
+    <label></label>
+    <button type="submit" class="btn btn-success pull-right">Simpan</button>
+</div> 
+
+
+
+    

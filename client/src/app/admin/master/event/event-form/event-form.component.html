@@ -1,0 +1,23 @@
+<acContentHeader [conf]="{'judul':'Event','subJudul':'Form Event','hirarki':['Master','Event','Form']}"></acContentHeader>
+
+<section class="content">
+  <div class="box box-success">
+    <div class="box-header with-border ">
+      <h3 class="box-title pull-right">
+        <a (click)='keList()' href="javascript: void(0);" class="btn btn-link margin-inline">Lihat Daftar Event >></a>
+      </h3>
+    </div>
+    <form role="form" (ngSubmit)="onSubmit()" ngNativeValidate>
+      <div class="box-body chat" id="chat-box">
+        <div style="padding:0px 60px 0px 60px" class='col-md-12'>
+          <acInput [(value)]='data.nama' [conf]="{'judul':'Nama','required':true}"></acInput>
+          <acInput [(value)]='data.tanggal' [conf]="{'type':'date', 'judul':'Tanggal Event'}"></acInput>
+          <acInput [(value)]='data.keterangan' [conf]="{'judul':'Keterangan'}"></acInput>
+        </div>
+      </div>
+      <div class="box-footer">
+        <acInput [conf]="{'type':'submit'}"></acInput>
+      </div>
+    </form>
+  </div>
+</section>

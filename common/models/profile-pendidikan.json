@@ -1,0 +1,34 @@
+{
+  "name": "profile_pendidikan",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "mixins": {
+  },
+  "properties": {
+    "id": {
+      "type": "number"
+    },
+    "id_profile": {
+      "type": "number"
+    },
+    "keterangan": {
+      "type": "string"
+    },
+    "tahun": {
+      "type": "number"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "profile": {
+      "type": "belongsTo",
+      "model": "profile",
+      "foreignKey": "id_profile"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

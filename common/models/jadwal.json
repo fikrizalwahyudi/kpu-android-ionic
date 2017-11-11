@@ -1,0 +1,29 @@
+{
+  "name": "jadwal",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "id": {
+      "type": "number",
+      "required": true
+    },
+    "tgl_mulai": {
+      "type": "date"
+    },
+    "tgl_selesai": {
+      "type": "date"
+    },
+    "keterangan": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {},
+  "mixins": {
+  }
+}

@@ -1,0 +1,53 @@
+<acContentHeader [conf]="{'judul':'Profile','subJudul':'Form Profile','hirarki':['Master','Profile','List']}"></acContentHeader>
+
+<section class="content">
+  <div class="box box-success">
+    <div class="box-header row">
+      <div class="col-md-8">
+        <button type="button" class="btn btn-success tbl-tambah" (click)="tambah()">
+          <i class="fa fa-plus"></i> Tambah Data
+        </button>
+      </div>
+
+      <div class="col-md-4">
+        <div class="input-group no-margin">
+          <span class="input-group-addon" style="border:none;background: #fff;background: rgba(0,0,0,.05);">
+            <a (click)="cari()" href="javascript:void(0)">
+              <i class="fa fa-search"></i>
+            </a>
+          </span>
+          <input (keyup.enter)="cari()" [(ngModel)]="katakunci" type="text" placeholder="Search..." class="form-control no-padding-hr"
+            style="border:none;background: #fff;background: rgba(0,0,0,.05);">
+        </div>
+      </div>
+    </div>
+    <div class="box-body chat" id="chat-box">
+      <table class="table table-striped">
+        <tr>
+          <th>Nama</th>
+          <th>Tempat Lahir</th>
+          <th>Tgl Lahir</th>
+          <th>Alamat</th>
+          <th colspan="2" class="text-center">AKSI</th>
+        </tr>
+        <tr *ngFor="let data of models; let i=index">
+          <td>{{data.nama}}</td>
+          <td>{{data.tempat_lahir}}</td>
+          <td>{{data.tgl_lahir | date:"dd/MM/yyyy"}}</td>
+          <td>{{data.alamat}}</td>
+          <td width="10px">
+            <button type="button" class="btn btn-info btn-xs" (click)="edit(data.id)">
+              <i class="fa fa-edit"></i> Edit
+            </button>
+          </td>
+          <td width="10px">
+            <button type="button" class="btn btn-danger btn-xs" (click)="hapus(data.id)">
+              <i class="fa fa-trash-o"></i> Hapus
+            </button>
+          </td>
+        </tr>
+      </table>
+      <acSpinner [show]="showSpinner"></acSpinner>
+    </div>
+  </div>
+</section>

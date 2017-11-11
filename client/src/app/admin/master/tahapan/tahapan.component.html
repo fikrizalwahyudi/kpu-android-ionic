@@ -1,0 +1,39 @@
+<acContentHeader [conf]="{'judul':'Tahapan','subJudul':'Form Tahapan','hirarki':['Master','Tahapan','List']}"></acContentHeader>
+
+<section class="content">
+  <div class="box box-success">
+    <div class="box-header row">
+      <div class="col-md-12">
+        <image-upload 
+        url="{{urlUnggah}}"
+         buttonCaption="Upload" 
+         dropBoxMessage="" 
+         clearButtonCaption="Hapus"
+         [max]="1" [extensions]="['jpeg','png']"
+         (uploadFinished)="setelahUpload($event)">
+        </image-upload>
+      </div>
+    </div>
+    <div class="box-body chat">
+      <acSpinner [show]="showSpinner"></acSpinner>
+      <table class="table table-striped">
+        <tr>
+          <th>Nama</th>
+          <th>Gambar</th>
+          <th>Tgl Upload</th>
+          <th class="text-center">AKSI</th>
+        </tr>
+        <tr *ngFor="let data of models; let i=index">
+          <td>{{data.name}}</td>
+          <td><img src="{{urlGambar}}{{data.name}}" alt="" height="100px"></td>
+          <td>{{data.atime | date:"dd/MM/yyyy"}}</td>
+          <td width="10px">
+            <button type="button" class="btn btn-danger btn-xs" (click)="hapus(data.name)">
+              <i class="fa fa-trash-o"></i> Hapus
+            </button>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,64 @@
+<section class="content">
+  <div class="box box-success">
+    <div class="box-header row">
+      <div class="col-md-8">
+        <button type="button" class="btn btn-success tbl-tambah" data-toggle="modal" data-target="#myModal" (click)="baru()">
+           Tambah Rekam Jejak
+        </button>
+      </div>
+    </div>
+    <div class="box-body chat" id="chat-box">
+      <table class="table table-striped">
+        <tr>
+          <th>Tahun</th>
+          <th>Keterangan</th>
+          <th colspan="2" class="text-center">AKSI</th>
+        </tr>
+        <tr *ngFor="let data of models; let i=index">
+          <td>{{data.tahun}}</td>
+          <td>{{data.keterangan}}</td>
+          <td width="10px">
+            <button type="button" class="btn btn-info btn-xs" data-toggle="modal" data-target="#myModal" (click)="edit(data)">
+              <i class="fa fa-edit"></i> Edit
+            </button>
+          </td>
+          <td width="10px">
+            <button type="button" class="btn btn-danger btn-xs" (click)="hapus(data.id)">
+              <i class="fa fa-trash-o"></i> Hapus
+            </button>
+          </td>
+        </tr>
+      </table>
+      <acSpinner [show]="showSpinner"></acSpinner>
+    </div>
+  </div>
+</section>
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title" id="myModalLabel">Form Rekam Jejak</h4>
+      </div>
+      <div class="modal-body">
+        <form role="form" (ngSubmit)="simpan()" ngNativeValidate>
+          <div class="box-body chat" id="chat-box">
+            <div style="padding:0px 60px 0px 60px" class='col-md-12'>
+              <acInput [(value)]='data.tahun' [conf]="{'type':'number', 'judul':'tahun'}"></acInput>
+              <acInput [(value)]='data.keterangan' [conf]="{'judul':'Keterangan'}"></acInput>
+            </div>
+          </div>
+          <!-- <div class="box-footer">
+            <input type="submit" value="Simpan" class="btn btn-primary">
+          </div> -->
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="simpan()">Simpan</button>
+      </div>
+    </div>
+  </div>
+</div>

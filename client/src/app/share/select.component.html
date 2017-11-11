@@ -1,0 +1,8 @@
+<div  class="form-group row">
+    <label>{{label}} <small *ngIf="required" style="color:red" title="Harus di isi!">*</small></label>
+    <select [required]='required' [(ngModel)]="value" class="form-control"  >
+        <option *ngFor="let data of data; let i = index" value="{{data.value}}" >
+            {{data.text}}
+        </option>  
+    </select>
+</div>

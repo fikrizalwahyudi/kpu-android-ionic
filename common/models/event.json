@@ -1,0 +1,30 @@
+{
+  "name": "event",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "mixins": {
+    
+  },
+  "properties": {
+    "id": {
+      "type": "number",
+      "required": true
+    },
+    "nama": {
+      "type": "string"
+    },
+    "keterangan": {
+      "type": "string"
+    },
+    "tanggal": {
+      "type": "date"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}
