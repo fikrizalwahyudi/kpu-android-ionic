@@ -12,8 +12,8 @@ export class TahapanComponent implements OnInit {
   katakunci = '';
   showSpinner = true;
   models = new Array<Unggah>();
-  urlUnggah = 'http://localhost:3000/api/unggahs/foto/upload';
-  urlGambar = 'http://localhost:3000/api/unggahs/foto/download/';
+  urlUnggah = 'http://kpu-android.oiloe.xyz/api/unggahs/foto/upload';
+  urlGambar = 'http://kpu-android.oiloe.xyz/api/unggahs/foto/download/';
 
   constructor(private router: Router, private UnggahApi: UnggahApi) { }
 
