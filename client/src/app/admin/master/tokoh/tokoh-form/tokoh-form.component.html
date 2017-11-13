@@ -14,6 +14,8 @@
           <acInput [(value)]='data.tempat_lahir' [conf]="{'judul':'Tempat Lahir'}"></acInput>
           <acInput [(value)]='data.tgl_lahir' [conf]="{'type':'date', 'judul':'Tanggal Lahir'}"></acInput>
           <acInput [(value)]='data.alamat' [conf]="{'judul':'Alamat'}"></acInput>
+          <acInput [(value)]='data.photo' (change)="upload($event)" [conf]="{'judul':'Photo','type':'file'}"></acInput>
+          <img src="{{urlGambar}}{{data.photo}}" alt="Belum Ada Gambar" height="50px">
         </div>
       </div>
       <div class="box-footer">

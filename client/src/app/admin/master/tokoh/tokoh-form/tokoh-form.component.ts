@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
+import { Http } from '@angular/http';
+import { Observable } from "rxjs/Observable";
 import { ProfileApi } from '../../../../shared/sdk/services/custom/Profile';
 import { Profile } from '../../../../shared/sdk/models/Profile';
+import { LoopBackConfig } from '../../../../shared/sdk/lb.config';
 
 @Component({
   selector: 'app-tokoh-form',
@@ -14,7 +17,11 @@ export class TokohFormComponent implements OnInit {
   temp: any;
   proses = false;
 
-  constructor(private router: Router, private ProfileApi: ProfileApi, private aktifRouter: ActivatedRoute) {
+  urlApi = LoopBackConfig.getPath();
+  urlUnggah = this.urlApi + '/api/unggahs/foto/upload';
+  urlGambar = this.urlApi + '/api/unggahs/foto/download/';
+
+  constructor(private router: Router, private ProfileApi: ProfileApi, private aktifRouter: ActivatedRoute, private http: Http) {
     this.temp = aktifRouter.params['value'];
     if (this.temp.id) {
       this.ambilData(this.temp.id);
@@ -57,6 +64,24 @@ export class TokohFormComponent implements OnInit {
 
   keList() {
     this.router.navigateByUrl('admin/profile');
+  }
+
+  upload(event) {
+    let a: File = event.target.files[0];
+    this.data.photo = a['lastModified'] + '-' + a.name;
+
+    var fd = new FormData();
+    fd.append('file', a, this.data.photo);
+
+    this.http.post(this.urlUnggah, fd)
+      .map(res => res.json())
+      .catch(error => Observable.throw(error))
+      .subscribe(
+        data => { 
+          console.log('berhasil di upload');
+        },
+        error => console.log(error)
+      );
   }
 
 }

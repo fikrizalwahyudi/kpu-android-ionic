@@ -24,11 +24,11 @@ export class PaslonComponent implements OnInit {
   }
 
   ambilData() {
-    /* let w = {
-      include: ['calon', 'wakil', 'event']
-    }; */
-
     let w = {
+      include: ['calon', 'wakil', 'event']
+    };
+
+    /* let w = {
       "include": [
         {
           "relation": "calon",
@@ -46,13 +46,11 @@ export class PaslonComponent implements OnInit {
           "relation": "event",
         }
       ]
-    }
+    } */
 
     this.PaslonApi.find(w).subscribe((data: Paslon[]) => {
       this.models = data;
       this.showSpinner = false;
-      console.log(data);
-      
     });
   }
 

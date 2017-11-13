@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ProfileApi } from '../../../shared/sdk/services/custom/Profile';
 import { Profile } from '../../../shared/sdk/models/Profile';
+import { LoopBackConfig } from '../../../shared/sdk/lb.config';
 
 @Component({
   selector: 'app-tokoh',
@@ -14,14 +15,14 @@ export class TokohComponent implements OnInit {
   showSpinner = true;
   models = new Array<Profile>();
 
+  urlApi = LoopBackConfig.getPath();
+  urlUnggah = this.urlApi + '/api/unggahs/foto/upload';
+  urlGambar = this.urlApi + '/api/unggahs/foto/download/';
+
   constructor(private router: Router, private profileApi: ProfileApi) { }
 
   ngOnInit() {
     this.ambilData();
-  }
-
-  ngOnDestroy() {
-
   }
 
   ambilData() {

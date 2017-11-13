@@ -27,14 +27,14 @@
           <th>Nama</th>
           <th>Tempat Lahir</th>
           <th>Tgl Lahir</th>
-          <th>Alamat</th>
+          <th>Photo</th>
           <th colspan="2" class="text-center">AKSI</th>
         </tr>
         <tr *ngFor="let data of models; let i=index">
           <td>{{data.nama}}</td>
           <td>{{data.tempat_lahir}}</td>
           <td>{{data.tgl_lahir | date:"dd/MM/yyyy"}}</td>
-          <td>{{data.alamat}}</td>
+          <td><img src="{{urlGambar}}{{data.photo}}" alt="Belum Ada Gambar" height="50px"></td>
           <td width="10px">
             <button type="button" class="btn btn-info btn-xs" (click)="edit(data.id)">
               <i class="fa fa-edit"></i> Edit
