@@ -45,6 +45,7 @@ export class PaslonFormComponent implements OnInit {
         console.log(error);
       });
     } else {
+      delete this.data.id;
       this.PaslonApi.create(this.data).subscribe((info) => {
         this.router.navigateByUrl('admin/paslon');
       }, (error) => {

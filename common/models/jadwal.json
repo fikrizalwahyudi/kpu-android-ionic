@@ -5,6 +5,7 @@
   "options": {
     "validateUpsert": true
   },
+  "mixins": {},
   "properties": {
     "id": {
       "type": "number",
@@ -18,12 +19,13 @@
     },
     "keterangan": {
       "type": "string"
+    },
+    "judul": {
+      "type": "string"
     }
   },
   "validations": [],
   "relations": {},
   "acls": [],
-  "methods": {},
-  "mixins": {
-  }
+  "methods": {}
 }

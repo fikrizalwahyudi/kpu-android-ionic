@@ -5,8 +5,7 @@
   "options": {
     "validateUpsert": true
   },
-  "mixins": {
-  },
+  "mixins": {},
   "properties": {
     "id": {
       "type": "number"

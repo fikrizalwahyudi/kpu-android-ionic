@@ -45,6 +45,7 @@ export class RekamJejakComponent implements OnInit {
         console.log(error);
       });
     } else {
+      delete this.data.id;
       this.Rekam_jejakApi.create(this.data).subscribe((info) => {
         this.ambilData();
         // console.log(info);

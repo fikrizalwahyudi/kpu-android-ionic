@@ -6,6 +6,7 @@ export interface JadwalInterface {
   "tgl_mulai"?: Date;
   "tgl_selesai"?: Date;
   "keterangan"?: string;
+  "judul"?: string;
 }
 
 export class Jadwal implements JadwalInterface {
@@ -13,6 +14,7 @@ export class Jadwal implements JadwalInterface {
   "tgl_mulai": Date = new Date(0);
   "tgl_selesai": Date = new Date(0);
   "keterangan": string = '';
+  "judul": string = '';
   constructor(data?: JadwalInterface) {
     Object.assign(this, data);
   }
@@ -60,6 +62,10 @@ export class Jadwal implements JadwalInterface {
         },
         "keterangan": {
           name: 'keterangan',
+          type: 'string'
+        },
+        "judul": {
+          name: 'judul',
           type: 'string'
         },
       },

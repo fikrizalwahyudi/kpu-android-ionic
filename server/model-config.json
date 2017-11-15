@@ -74,5 +74,9 @@
   "jadwal": {
     "dataSource": "mysql",
     "public": true
+  },
+  "dpt": {
+    "dataSource": "mysql",
+    "public": true
   }
 }

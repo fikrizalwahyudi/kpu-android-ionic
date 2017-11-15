@@ -1,0 +1,60 @@
+{
+  "name": "dpt",
+  "plural": "dpt",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "id": {
+      "type": "number"
+    },
+    "dp_id": {
+      "type": "string"
+    },
+    "master": {
+      "type": "string"
+    },
+    "nik": {
+      "type": "string"
+    },
+    "nkk": {
+      "type": "string"
+    },
+    "nama_pemilih": {
+      "type": "string"
+    },
+    "tempat_lahir": {
+      "type": "string"
+    },
+    "tanggal_lahir": {
+      "type": "date"
+    },
+    "umur": {
+      "type": "number"
+    },
+    "status_kawin": {
+      "type": "string"
+    },
+    "jenis_kelamin": {
+      "type": "string"
+    },
+    "alamat": {
+      "type": "string"
+    },
+    "dusun": {
+      "type": "string"
+    },
+    "rt": {
+      "type": "number"
+    },
+    "rw": {
+      "type": "number"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

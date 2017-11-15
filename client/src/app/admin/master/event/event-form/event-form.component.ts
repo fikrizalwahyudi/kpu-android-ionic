@@ -45,6 +45,7 @@ export class EventFormComponent implements OnInit {
         console.log(error);
       });
     } else {
+      delete this.data.id;
       this.EventApi.create(this.data).subscribe((info) => {
         this.router.navigateByUrl('admin/event');
       }, (error) => {

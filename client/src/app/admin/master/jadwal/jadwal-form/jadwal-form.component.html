@@ -10,7 +10,8 @@
     <form role="form" (ngSubmit)="onSubmit()" ngNativeValidate>
       <div class="box-body chat" id="chat-box">
         <div style="padding:0px 60px 0px 60px" class='col-md-12'>
-          <acInput [(value)]='data.keterangan' [conf]="{'judul':'Keterangan','required':true}"></acInput>
+          <acInput [(value)]='data.judul' [conf]="{'judul':'Judul','required':true}"></acInput>
+          <acInput [(value)]='data.keterangan' [conf]="{'judul':'Keterangan'}"></acInput>
           <acInput [(value)]='data.tgl_mulai' [conf]="{'type':'date', 'judul':'Tanggal Mulai'}"></acInput>
           <acInput [(value)]='data.tgl_selesai' [conf]="{'type':'date', 'judul':'Tanggal Selesai'}"></acInput>
         </div>

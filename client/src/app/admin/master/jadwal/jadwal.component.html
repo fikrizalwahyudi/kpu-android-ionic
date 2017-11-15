@@ -24,12 +24,14 @@
     <div class="box-body chat" id="chat-box">
       <table class="table table-striped">
         <tr>
+          <th>Judul</th>
           <th>Keterangan</th>
           <th>Tgl Mulai</th>
           <th>Tgl Selesai</th>
           <th colspan="2" class="text-center">AKSI</th>
         </tr>
         <tr *ngFor="let data of models; let i=index">
+          <td>{{data.judul}}</td>
           <td>{{data.keterangan}}</td>
           <td>{{data.tgl_mulai | date:"dd/MM/yyyy"}}</td>
           <td>{{data.tgl_selesai | date:"dd/MM/yyyy"}}</td>

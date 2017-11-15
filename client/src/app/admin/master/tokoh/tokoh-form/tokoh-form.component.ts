@@ -43,6 +43,8 @@ export class TokohFormComponent implements OnInit {
     this.ProfileApi.findById(id).subscribe((data: Profile) => {
       this.data = data;
       this.proses = true;
+      console.log(this.data);
+      
     });
   }
 
@@ -54,6 +56,13 @@ export class TokohFormComponent implements OnInit {
         console.log(error);
       });
     } else {
+      delete this.data.id;
+      delete this.data.id_pendidikan_terakhir;
+      delete this.data.pendidikan_terakhir;
+      delete this.data.rekam_jejak;
+      delete this.data.profile_pendidikan;
+      console.log(this.data);
+      
       this.ProfileApi.create(this.data).subscribe((info) => {
         this.router.navigateByUrl('admin/profile');
       }, (error) => {

@@ -45,6 +45,7 @@ export class JadwalFormComponent implements OnInit {
         console.log(error);
       });
     } else {
+      delete this.data.id;
       this.JadwalApi.create(this.data).subscribe((info) => {
         this.router.navigateByUrl('admin/jadwal');
       }, (error) => {

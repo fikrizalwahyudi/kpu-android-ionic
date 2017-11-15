@@ -45,6 +45,7 @@ export class ProfilePendidikanComponent implements OnInit {
         console.log(error);
       });
     } else {
+      delete this.data.id;
       this.Profile_pendidikanApi.create(this.data).subscribe((info) => {
         this.ambilData();
         // console.log(info);
